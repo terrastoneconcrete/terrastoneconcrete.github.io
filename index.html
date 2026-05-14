@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terrastone Concrete | Professional Concrete Contractor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --stone: #4a4a4a;
+    --stone-light: #f2f2f2;
+    --stone-mid: #636363;
+    --accent: #d48c45; /* Rust/Copper accent for industrial feel */
+    --dark: #1c1c1c;
+    --text: #3a3a3a;
+    --muted: #777;
+    --bg: #fafaf8;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e8e8e4;
+    z-index: 100;
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--stone);
+    letter-spacing: 0.01em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--stone);
+    color: white !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 64px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6% 8%;
+    background: var(--white);
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .hero-tag::before {
+    content: ''; display: block;
+    width: 24px; height: 2px; background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+  }
+  .btn-primary {
+    background: var(--stone);
+    color: white;
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .btn-outline {
+    border: 1.5px solid var(--stone);
+    color: var(--stone);
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .hero-right {
+    background: #333 url('https://images.unsplash.com/photo-1590079019458-0eb5b40a3371?auto=format&fit=crop&q=80&w=1200') center/cover;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  .hero-card {
+    position: relative; z-index: 1;
+    background: rgba(255,255,255,0.95);
+    border-radius: 4px;
+    padding: 2.5rem;
+    max-width: 340px;
+    color: var(--dark);
+  }
+
+  /* SERVICES */
+  .services { padding: 6rem 8%; background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .service-card {
+    border: 1px solid #eee;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .service-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  .service-content { padding: 1.5rem; }
+
+  /* REVIEWS */
+  .reviews { padding: 6rem 8%; background: var(--stone-light); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .review-card { background: white; padding: 2rem; border-radius: 4px; }
+
+  /* CLAIM BANNER */
+  .claim-banner {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 1.25rem;
+    font-weight: 500;
+  }
+  .claim-banner a { color: white; }
+
+  footer {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 8%;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="claim-banner">
+  This is a free preview built for Terrastone Concrete — <a href="mailto:hello@fire4biz.com">claim this website for $249</a>
+</div>
+
+<nav>
+  <div class="nav-logo">Terrastone</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:+18326027883" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Professional Concrete Contractor · Open Until 5 PM</div>
+    <h1>Built for <em>Strength.</em><br>Designed for Life.</h1>
+    <p>Premium concrete solutions for driveways, patios, and foundations. Serving our local community with durable, high-quality craftsmanship.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="tel:+18326027883" class="btn-outline">+1 832-602-7883</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-overlay"></div>
+    <div class="hero-card">
+      <div style="color: #d48c45; margin-bottom: 1rem;">★★★★★</div>
+      <p style="font-style: italic; margin-bottom: 1rem;">"Terrastone replaced our old cracked driveway. The team was professional, fast, and the finish is absolutely perfect. Highly recommend!"</p>
+      <div style="font-size: 0.8rem; font-weight: 700;">— Michael R.</div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div style="text-align: center;">
+    <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Our Core Services</h2>
+    <p style="color: var(--muted); margin-top: 1rem;">From residential decorative work to heavy-duty commercial foundations.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&q=80&w=800');"></div>
+      <div class="service-content">
+        <h3>Custom Driveways</h3>
+        <p>Reinforced concrete driveways built to withstand heavy use and Texas weather.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1590079019458-0eb5b40a3371?auto=format&fit=crop&q=80&w=800');"></div>
+      <div class="service-content">
+        <h3>Decorative Patios</h3>
+        <p>Stamped and stained concrete options to transform your outdoor living space.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800');"></div>
+      <div class="service-content">
+        <h3>Foundations & Slabs</h3>
+        <p>Precision pouring for home additions, sheds, and commercial structures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <h2 style="text-align: center; font-family: 'Playfair Display'; margin-bottom: 3rem;">Customer Satisfaction</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div style="color: #d48c45;">★★★★★</div>
+      <p style="margin: 1rem 0;">"Excellent work on our patio. They arrived on time and kept the job site clean. Great experience from start to finish."</p>
+      <strong>— Sarah L.</strong>
+    </div>
+    <div class="review-card">
+      <div style="color: #d48c45;">★★★★★</div>
+      <p style="margin: 1rem 0;">"The best concrete contractor I've worked with. Honest pricing and they clearly know their stuff. My walkway looks amazing."</p>
+      <strong>— James W.</strong>
+    </div>
+    <div class="review-card">
+      <div style="color: #d48c45;">★★★★★</div>
+      <p style="margin: 1rem 0;">"Hardworking crew. They finished our pool deck ahead of schedule and the quality is top-notch. Worth every penny."</p>
+      <strong>— Brenda M.</strong>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <h2 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Terrastone Concrete</h2>
+  <p>+1 832-602-7883 · Open until 5 PM</p>
+  <p style="margin-top: 2rem; opacity: 0.6;">© 2026 Terrastone Concrete. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
