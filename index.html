@@ -124,13 +124,14 @@
   }
 
   .hero-right {
-    background: #333 url('https://images.unsplash.com/photo-1590425337213-9842a2331564?auto=format&fit=crop&q=80&w=1200') center/cover;
+    /* Hero Image: Professional wet concrete finishing */
+    background: #333 url('https://images.unsplash.com/photo-1574350818299-4485d011157c?q=80&w=2070&auto=format&fit=crop') center/cover;
     position: relative;
     display: flex; align-items: center; justify-content: center;
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.3);
   }
   .hero-card {
     position: relative; z-index: 1;
@@ -139,6 +140,7 @@
     padding: 2.5rem;
     max-width: 340px;
     color: var(--dark);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
 
   /* SERVICES */
@@ -153,9 +155,11 @@
     border: 1px solid #eee;
     overflow: hidden;
     border-radius: 4px;
+    transition: transform 0.3s ease;
   }
+  .service-card:hover { transform: translateY(-5px); }
   .service-img {
-    height: 200px;
+    height: 220px;
     background-size: cover;
     background-position: center;
   }
@@ -178,7 +182,7 @@
     padding: 1.25rem;
     font-weight: 500;
   }
-  .claim-banner a { color: white; }
+  .claim-banner a { color: white; font-weight: 700; }
 
   footer {
     background: var(--dark);
@@ -231,21 +235,21 @@
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1621944190310-e3cca1564bd7?auto=format&fit=crop&q=80&w=800');"></div>
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2070&auto=format&fit=crop');"></div>
       <div class="service-content">
         <h3>Custom Driveways</h3>
         <p>Reinforced concrete driveways built to withstand heavy use and Texas weather.</p>
       </div>
     </div>
     <div class="service-card">
-      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1601614138133-29471f00889c?auto=format&fit=crop&q=80&w=800');"></div>
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1590425337213-9842a2331564?q=80&w=2070&auto=format&fit=crop');"></div>
       <div class="service-content">
         <h3>Decorative Patios</h3>
         <p>Stamped and stained concrete options to transform your outdoor living space.</p>
       </div>
     </div>
     <div class="service-card">
-      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1590487988256-9ed24133863e?auto=format&fit=crop&q=80&w=800');"></div>
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop');"></div>
       <div class="service-content">
         <h3>Foundations & Slabs</h3>
         <p>Precision pouring for home additions, sheds, and commercial structures.</p>
